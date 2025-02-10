@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+:root {
+    --color-primary: #0E0E0E;
+    --color-secondary: #0D0D0D;
+
+    --color-accent: #D0FF00;
+
+    --color-text-primary: #CBCBCB;
+
+    --border-sm: 5px;
+}
+
+* {
+    margin: 0;
+    font-family: "Oxanium", serif;
+    letter-spacing: 0.15em;
+    font-size: 0.95em;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
+.nav {
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    padding-inline: 50px;
+    gap: 70px;
+    color: var(--color-text-primary);
+    justify-content: space-between;
+}
+.nav-links-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.page-link {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.social-media-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.social-media-links img {
+    width: 20px;
+    height: auto;
+}
+
+.styled-button {
+    color: var(--color-primary);
+    font-weight: 1000;
+    background-color: var(--color-accent);
+    border: 0;
+    padding: 10px;
+    padding-inline: 30px;
+    border-radius: var(--border-sm);
+    background: linear-gradient(-135deg, 
+        transparent 10px, 
+        var(--color-accent) 10px, 
+        var(--color-accent) calc(100% - 10px), 
+        transparent calc(100% - 10px)
+    );
+}
+
+.logo-text {
+    width: 120px;
+    height: auto;
+}
