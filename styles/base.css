@@ -345,6 +345,7 @@ footer * {
 .news-card {
     display: flex;
     overflow: hidden;
+    border-radius: var(--border-md);
 }
 .news-card-main {
     flex-direction: row;
