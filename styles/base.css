@@ -35,7 +35,7 @@ body {
     width: 100vw;
     height: 100vh;
 
-    background-image: url("/assets/images/dot.png");
+    background-image: url("assets/images/dot.png");
     background-repeat: repeat; /* This will tile the image across the entire body */
     background-size: 15px;
 }
