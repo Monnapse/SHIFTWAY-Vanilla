@@ -4,11 +4,11 @@ function loadFooter(element) {
     element.innerHTML = `
         <div class="footer">
             <nav class="nav-links">
-                <a class="page-link" href="/termsofservice.html">TERMS OF SERVICE</a>
+                <a class="page-link" href="termsofservice.html">TERMS OF SERVICE</a>
                 |
-                <a class="page-link" href="/privacypolicy.html">PRIVACY POLICY</a>
+                <a class="page-link" href="privacypolicy.html">PRIVACY POLICY</a>
                 |
-                <a class="page-link" href="/support.html">SUPPORT</a>
+                <a class="page-link" href="support.html">SUPPORT</a>
             </nav>
             <div class="social-media-links">
                 <a href="twitter">
