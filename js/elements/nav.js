@@ -2,7 +2,7 @@ function loadNav(element) {
     element.innerHTML = `
         <div class="nav">
             <div class="nav-links-container">
-                <a href="">
+                <a href="index.html">
                     <img  class="logo-text" src="assets/images/LogoText.svg" alt="logo text" loading="lazy">
                 </a>
                 <nav class="nav-links">
