@@ -45,38 +45,19 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/style.css">
+
+    <script src="js/lib/fetch.js" defer></script>
+    <script src="js/lib/news.js" defer></script>
+    <script src="js/pages/index.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="nav">
-            <div class="nav-links-container">
-                <a href="/">
-                    <img  class="logo-text" src="assets/images/LogoText.svg" alt="logo text" loading="lazy">
-                </a>
-                <nav class="nav-links">
-                    <a class="page-link" href="/news">NEWS</a>
-                    <button class="page-link" href="/about">ABOUT</button>
-                    <a class="page-link" href="/support">SUPPORT</a>
-                </nav>
-            </div>
-            <div class="nav-buttons">
-                <a class="styled-button" href="/jointhebeta">JOIN THE BETA</a>
-                <div class="social-media-links">
-                    <a href="twitter">
-                        <img src="assets/images/twitter.svg" alt="twitter" loading="lazy">
-                    </a> 
-                    <a href="youtube"> 
-                        <img src="assets/images/youtube.svg" alt="youtube" loading="lazy">
-                    </a> 
-                    <a href="discord"> 
-                        <img src="assets/images/discord.svg" alt="discord" loading="lazy">
-                    </a> 
-                    <a href="tiktok"> 
-                        <img src="assets/images/tiktok.svg" alt="tiktok" loading="lazy">
-                    </a>
-                </div>
-            </div>
-        </div>
+        <script src="js/elements/nav.js" defer></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                loadNav(document.querySelector("header"));
+            });
+        </script>
     </header>
     <main>
         <div class="main-container">
@@ -89,7 +70,7 @@
                     </div>
                     <div class="hero-btns">
                         <a href="#trailer" class="btn-2">WATCH THE TRAILER</a>
-                        <a href="/jointhebeta" class="btn-1">JOIN THE BETA</a>
+                        <a href="/jointhebeta.html" class="btn-1">JOIN THE BETA</a>
                     </div>
                 </div>
             </div>
@@ -111,7 +92,7 @@
                                     nd navigation, requiring players to constantly adjust their spatial awareness as they encounter 
                                     new challenges in this ever-shifting environment.
                                 </p>
-                                <a href="/about" class="link">MORE ABOUT THE GAME</a>
+                                <a href="/about.html" class="link">MORE ABOUT THE GAME</a>
                             </div>
                             <div class="section-info-cards">
                                 <div class="img-info-card">
@@ -119,14 +100,14 @@
                                         <h3>KEY CONCEPT</h3>
                                         <p>Inverted gravity forces you to rethink FPS combat.</p>
                                     </div>
-                                    <img src="assets/images/screenshot-1.png" alt="screentshot" loading="lazy">
+                                    <img src="assets/images/screenshot-2.png" alt="screentshot" loading="lazy">
                                 </div>
                                 <div class="img-info-card">
                                     <div>
                                         <h3>IMMERSIVE SETTING</h3>
                                         <p>Gigantic orbiting space station with advanced tech.</p>
                                     </div>
-                                    <img src="assets/images/screenshot-1.png" alt="screentshot" loading="lazy">
+                                    <img src="assets/images/screenshot-3.png" alt="screentshot" loading="lazy">
                                 </div>
                             </div>
                         </div>
@@ -152,93 +133,12 @@
                     <div>
                         <h2 id="about" class="section-title-rotated">NEWS</h2>
                         <div class="section-content">
-                            <div class="flex flex-col g-2">
-                                <div class="news-card news-card-main">
-                                    <img src="assets/images/screenshot-1.png" alt="screentshot" loading="lazy">
-                                    <div>
-                                        <h3>NEWS TITLE RIGHT ABOUT HERE</h3>
-                                        <span>5 hours ago</span>
-                                        <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Molestie aenean lectus laoreet 
-                                            facilisis id lacinia? Nisi ipsum dui conubia ornare maximus fringilla sapien. Nulla 
-                                            himenaeos nam adipiscing quisque dignissim montes taciti. Accumsan nisl lacus mus orci 
-                                            vulputate ante mattis cras felis. Nibh et justo convallis faucibus morbi porttitor; conubia 
-                                            rutrum. Quam auctor euismod vehicula platea, malesuada congue lacinia parturient.
-                                            Amet laoreet semper aliquet praesent interdum donec et lorem? Ex nascetur maximus sapien 
-                                            aenean fringilla donec felis porta diam. Mauris dui suscipit hac maecenas est ultrices. 
-                                            Ipsum dignissim lorem, conubia platea potenti aliquam. Facilisis semper conubia est; 
-                                            leo porta nullam fusce. Ornare ullamcorper facilisi eleifend massa ullamcorper.
-                                        </p>
-                                    </div>
+                            <h3>NEWS</h3>
+                            
+                            <div id="newsContainer" class="flex flex-col g-2">
+                                <div id="newsContainerMain">
                                 </div>
-                                <div class="news-cards-secondary">
-                                    <div class="news-card news-card-secondary">
-                                        <img src="assets/images/screenshot-1.png" alt="screentshot" loading="lazy">
-                                        <div>
-                                            <h3>NEWS TITLE RIGHT ABOUT HERE</h3>
-                                            <span>5 hours ago</span>
-                                            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Molestie aenean lectus laoreet 
-                                                facilisis id lacinia? Nisi ipsum dui conubia ornare maximus fringilla sapien. Nulla 
-                                                himenaeos nam adipiscing quisque dignissim montes taciti. Accumsan nisl lacus mus orci 
-                                                vulputate ante mattis cras felis. Nibh et justo convallis faucibus morbi porttitor; conubia 
-                                                rutrum. Quam auctor euismod vehicula platea, malesuada congue lacinia parturient.
-                                                Amet laoreet semper aliquet praesent interdum donec et lorem? Ex nascetur maximus sapien 
-                                                aenean fringilla donec felis porta diam. Mauris dui suscipit hac maecenas est ultrices. 
-                                                Ipsum dignissim lorem, conubia platea potenti aliquam. Facilisis semper conubia est; 
-                                                leo porta nullam fusce. Ornare ullamcorper facilisi eleifend massa ullamcorper.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="news-card news-card-secondary">
-                                        <img src="assets/images/screenshot-1.png" alt="screentshot" loading="lazy">
-                                        <div>
-                                            <h3>NEWS TITLE RIGHT ABOUT HERE</h3>
-                                            <span>5 hours ago</span>
-                                            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Molestie aenean lectus laoreet 
-                                                facilisis id lacinia? Nisi ipsum dui conubia ornare maximus fringilla sapien. Nulla 
-                                                himenaeos nam adipiscing quisque dignissim montes taciti. Accumsan nisl lacus mus orci 
-                                                vulputate ante mattis cras felis. Nibh et justo convallis faucibus morbi porttitor; conubia 
-                                                rutrum. Quam auctor euismod vehicula platea, malesuada congue lacinia parturient.
-                                                Amet laoreet semper aliquet praesent interdum donec et lorem? Ex nascetur maximus sapien 
-                                                aenean fringilla donec felis porta diam. Mauris dui suscipit hac maecenas est ultrices. 
-                                                Ipsum dignissim lorem, conubia platea potenti aliquam. Facilisis semper conubia est; 
-                                                leo porta nullam fusce. Ornare ullamcorper facilisi eleifend massa ullamcorper.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="news-card news-card-secondary">
-                                        <img src="assets/images/screenshot-1.png" alt="screentshot" loading="lazy">
-                                        <div>
-                                            <h3>NEWS TITLE RIGHT ABOUT HERE</h3>
-                                            <span>5 hours ago</span>
-                                            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Molestie aenean lectus laoreet 
-                                                facilisis id lacinia? Nisi ipsum dui conubia ornare maximus fringilla sapien. Nulla 
-                                                himenaeos nam adipiscing quisque dignissim montes taciti. Accumsan nisl lacus mus orci 
-                                                vulputate ante mattis cras felis. Nibh et justo convallis faucibus morbi porttitor; conubia 
-                                                rutrum. Quam auctor euismod vehicula platea, malesuada congue lacinia parturient.
-                                                Amet laoreet semper aliquet praesent interdum donec et lorem? Ex nascetur maximus sapien 
-                                                aenean fringilla donec felis porta diam. Mauris dui suscipit hac maecenas est ultrices. 
-                                                Ipsum dignissim lorem, conubia platea potenti aliquam. Facilisis semper conubia est; 
-                                                leo porta nullam fusce. Ornare ullamcorper facilisi eleifend massa ullamcorper.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="news-card news-card-secondary">
-                                        <img src="assets/images/screenshot-1.png" alt="screentshot" loading="lazy">
-                                        <div>
-                                            <h3>NEWS TITLE RIGHT ABOUT HERE</h3>
-                                            <span>5 hours ago</span>
-                                            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Molestie aenean lectus laoreet 
-                                                facilisis id lacinia? Nisi ipsum dui conubia ornare maximus fringilla sapien. Nulla 
-                                                himenaeos nam adipiscing quisque dignissim montes taciti. Accumsan nisl lacus mus orci 
-                                                vulputate ante mattis cras felis. Nibh et justo convallis faucibus morbi porttitor; conubia 
-                                                rutrum. Quam auctor euismod vehicula platea, malesuada congue lacinia parturient.
-                                                Amet laoreet semper aliquet praesent interdum donec et lorem? Ex nascetur maximus sapien 
-                                                aenean fringilla donec felis porta diam. Mauris dui suscipit hac maecenas est ultrices. 
-                                                Ipsum dignissim lorem, conubia platea potenti aliquam. Facilisis semper conubia est; 
-                                                leo porta nullam fusce. Ornare ullamcorper facilisi eleifend massa ullamcorper.
-                                            </p>
-                                        </div>
-                                    </div>
+                                <div id="newsContainerSecondary" class="news-cards-secondary">
                                 </div>
                             </div>
                         </div>
@@ -248,36 +148,12 @@
         </div>
     </main>
     <footer>
-        <div class="footer">
-            <nav class="nav-links">
-                <a class="page-link" href="/news">TERMS OF SERVICE</a>
-                |
-                <a class="page-link" href="/news">PRIVACY POLICY</a>
-                |
-                <a class="page-link" href="/support">SUPPORT</a>
-            </nav>
-            <div class="social-media-links">
-                <a href="twitter">
-                    <img src="assets/images/twitter.svg" alt="twitter" loading="lazy">
-                </a> 
-                <a href="youtube"> 
-                    <img src="assets/images/youtube.svg" alt="youtube" loading="lazy">
-                </a> 
-                <a href="discord"> 
-                    <img src="assets/images/discord.svg" alt="discord" loading="lazy">
-                </a> 
-                <a href="tiktok"> 
-                    <img src="assets/images/tiktok.svg" alt="tiktok" loading="lazy">
-                </a>
-            </div>
-            <div class="copyright">
-                <div class="copyright-imgs">
-                    <img src="assets/images/intrepidus.png" alt="Intrepidus" loading="lazy">
-                    <img src="assets/images/logo.svg" alt="SHIFTWAY" loading="lazy">
-                </div>
-                <p>© 2024 - <span id="currentYear"></span> Intrepidus Games, SHIFTWAY. All Rights Reserved.</p>
-            </div>
-        </div>
+        <script src="js/elements/footer.js" defer></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                loadFooter(document.querySelector("footer"));
+            });
+        </script>
     </footer>
 </body>
 </html>

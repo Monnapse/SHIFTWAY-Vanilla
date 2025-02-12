@@ -16,6 +16,8 @@
     --color-text-secondary: #CBCBCB;
     --color-text-third: #CBCBCB;
 
+    --color-border: #4F4F4F;
+
     --border-sm: 5px;
     --border-md: 10px;
 }
@@ -83,6 +85,46 @@ a {
     border: none;
     font-size: 1.3em;
     font-weight: 500;
+}
+.page-link:hover {
+    cursor: pointer;
+}
+.page-link-button:hover .page-link-hover {
+    display: flex;
+}
+
+.page-link-button {
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-link-button img {
+    width: 13px;
+    height: 13px;
+}
+
+.page-link-hover {
+    /*display: none;*/
+    display: none;
+    flex-direction: column;
+    text-align: left;
+    gap: 15px;
+    position: absolute;
+    top: 100%; /* Places it directly below the button */
+    left: -10px;
+    background: var(--color-primary);
+    padding: 20px;
+    z-index: 10;
+    white-space: nowrap;
+    font-size: .85em;
 }
 
 .social-media-links {
@@ -180,12 +222,27 @@ footer * {
     background-repeat: no-repeat;
 }
 
+.hero-2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-2 h3 {
+    font-size: 5em !important;
+    font-weight: 700 !important;
+}
+.hero-2 p {
+    font-size: 1.4em !important;
+    font-weight: 500 !important;
+}
+
 .hero {
-    padding: 150px;
+    padding: 270px;
     display: flex;
     flex-direction: column;
     gap: 25px;
-
 }
 
 .hero p {
@@ -277,6 +334,10 @@ footer * {
     transform-origin: left;
 }
 
+.section-title-rotated-text-scaled {
+    font-size: 100% !important;
+}
+
 .section-content {
     display: flex;
     flex-direction: column;
@@ -291,11 +352,15 @@ footer * {
     flex-direction: column;
     gap: 15px
 }
-.about-card h3 {
+.section-content h3 {
     font-size: 2.5em;
 }
 .about-card p {
     font-size: 1.2em;
+}
+
+.about-card-2 {
+    border: 1px solid var(--color-border);
 }
 
 .page-content {
@@ -305,6 +370,18 @@ footer * {
     gap: 50px;
     padding: 50px;
     padding-inline: 50px;
+}
+.info-card {
+    background-color: var(--color-background-three);
+    padding: 50px;
+    border-radius: var(--border-sm);
+    width: 100%;
+}
+.info-card h3 {
+    font-size: 2.5em;
+}
+.info-card p {
+    font-size: 1.5em;
 }
 .section-info-cards {
     display: flex;
