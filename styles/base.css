@@ -23,7 +23,7 @@
 }
 
 * {
-    margin: 0;
+    margin: 0 auto;
     font-family: "Oxanium", serif;
     letter-spacing: 0.15em;
     font-size: 0.95em;
@@ -48,15 +48,17 @@ a {
 }
 
 .nav {
+    position: relative;
     background-color: var(--color-primary);
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 10px;
     padding-inline: 50px;
-    gap: 70px;
+    gap: 30px;
     color: var(--color-text-secondary);
     justify-content: space-between;
+
 }
 .nav-links-container {
     display: flex;
@@ -89,8 +91,31 @@ a {
 .page-link:hover {
     cursor: pointer;
 }
-.page-link-button:hover .page-link-hover {
-    display: flex;
+
+.page-link-button-hover {
+    display: flex !important;
+    align-items:start;
+}
+/*
+.page-link-button:hover .nav-buttons.active {
+    top: calc(100% + 540px) !important; /* Slightly below the links *//*
+}
+.page-link-button:hover {
+    flex-direction: column !important;
+}*/
+
+.nav-buttons-active {
+    top: calc(100% + 275px) !important;
+}
+.page-link-button-active {
+    position: relative !important;
+    display: flex !important;
+}
+.page-link-hover-active {
+    position: relative !important;
+    display: flex !important;
+    height: fit-content;
+    flex-direction: column !important;
 }
 
 .page-link-button {
@@ -99,7 +124,6 @@ a {
     background: none;
     cursor: pointer;
     padding: 10px;
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -110,12 +134,10 @@ a {
     width: 13px;
     height: 13px;
 }
-
 .page-link-hover {
     /*display: none;*/
     display: none;
     flex-direction: column;
-    text-align: left;
     gap: 15px;
     position: absolute;
     top: 100%; /* Places it directly below the button */
@@ -125,6 +147,7 @@ a {
     z-index: 10;
     white-space: nowrap;
     font-size: .85em;
+    height: fit-content;
 }
 
 .social-media-links {
@@ -300,7 +323,8 @@ footer * {
 .section-container-ignore {
     background-color: var(--color-background);
     padding: 0px;
-    width: 100vw;
+    width: 100vw !important;
+    margin-inline: -50px;
 }
 
 .section-container-ignore > h2 {
@@ -308,9 +332,32 @@ footer * {
     padding-inline: 100px;
 }
 
+.img-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-blur::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: blur(5px) brightness(0.15);
+    z-index: -1; /* Keeps the pseudo-element behind the text */
+}
+
 .section-container-video {
     width: 100%;
     height: 1080px;
+}
+.no-background {
+    background-color: transparent !important;
 }
 
 .section-container {
@@ -336,6 +383,19 @@ footer * {
 
 .section-title-rotated-text-scaled {
     font-size: 100% !important;
+}
+
+/*
+.map-layout {
+
+}*/
+
+.map-layout div {
+    width: 100%;
+}
+
+.map-layout img {
+    width: 100%;
 }
 
 .section-content {
@@ -480,6 +540,45 @@ footer * {
     gap: 15px;
 }
 
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.chip {
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-md);
+    padding: 4px;
+    display: inline-block;
+    white-space: nowrap;
+    max-width: fit-content;
+    text-align: center;
+    font-size: 1.7em
+}
+.chip > div {
+    padding: 8px 16px;
+    background-color: var(--color-border);
+    border-radius: var(--border-sm);
+    max-width: fit-content;
+}
+
+.mobile-menu {
+    display: none;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.mobile-menu  img {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+}
+
+.menu-active .nav-buttons, .menu-active .nav-links {
+    display: flex;
+}
+
 @media (max-width: 1524px) {
     .news-card-main {
         flex-direction: column;
@@ -489,9 +588,47 @@ footer * {
         height: 400px;
     }
 }
+@media (max-width: 1184px) {
+    .mobile-menu {
+        display: flex;
+    }
+    .nav-buttons, .nav-links{
+        display: none;
+    }
+    .nav-buttons, .nav-links {
+        width: 100vw;
+    }
+    .nav .nav-links, 
+    .nav .nav-buttons {
+        width: calc(100% - 40px); /* Keeps some padding on the sides */
+        position: absolute;
+        background-color: var(--color-primary);
+        flex-direction: column;
+        text-align: left;
+        gap: 15px;
+        top: 100%; /* Directly below the navbar */
+        left: 0px;
+        padding: 20px;
+        z-index: 10;
+        white-space: nowrap;
+        font-size: 0.85em;
+    }
+    .nav .nav-buttons {
+        top: calc(100% + 140px); /* Slightly below the links */
+    }
+
+    /* Show on mobile menu open */
+    .nav.active .nav-links,
+    .nav.active .nav-buttons {
+        display: flex;
+    }
+}
 @media (max-width: 1024px) {
     .news-cards-secondary {
         flex-direction: column;
+    }
+    .map-content {
+        flex-direction: column !important;
     }
 }
 @media (max-width: 896px) {
