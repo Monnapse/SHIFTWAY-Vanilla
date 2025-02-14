@@ -14,7 +14,7 @@ function loadFooter(element) {
                 <a href="twitter">
                     <img src="assets/images/twitter.svg" alt="twitter" loading="lazy">
                 </a> 
-                <a href="youtube"> 
+                <a href="https://www.youtube.com/@IntrepidusGames"> 
                     <img src="assets/images/youtube.svg" alt="youtube" loading="lazy">
                 </a> 
                 <a href="discord"> 
